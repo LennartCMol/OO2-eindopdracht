@@ -1,5 +1,6 @@
 #pragma once
 #include <iostream>
+#include "Webclient.h"
 
 class Application
 {
@@ -10,7 +11,7 @@ public:
 	
 private:
 	template <typename T>
-	void checkInput(T variableType, int min, int max);
+	T checkInput(T variableType, int min, int max);
 	double latitude = 45.000;
 	double langitude = 8.000;
 	int peakPower = 1;
