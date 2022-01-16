@@ -62,7 +62,6 @@ int main()
     // Filter rawData by checking for a number(month) at the beginnen of string.
     for (string line : tokens){
         if(line.empty()){
-
         }
         else if(isdigit(line.at(0))){
             data.push_back(line);
@@ -72,22 +71,24 @@ int main()
     // temp string array
     vector <string> temp;
 
-    // Vector of string to save all E_m data. 0 = first month
-    vector <string> E_m;
+    // Map containing the month mapped to the power
+    map<int, double> kWhPerMonth;
 
-    // split data lines and select the second element for E_m data.
+    // split data lines and put values of month and E_m into map.
     for (string line : data){
         std::stringstream ss(line);
         for (string i; ss >> i;) {
             temp.push_back(i);    
-            if (ss.peek() == '\t')
-            ss.ignore();
-        }
-        E_m.push_back(temp[2]);
+            if (ss.peek() == '\t'){
+                ss.ignore();
+            }
+        } 
+        // Convert string to int and double and put them into the map
+        kWhPerMonth.insert(pair<int, double>(stoi(temp[0]), stod(temp[2])));
         temp.clear();
     }
 
-    // Printing the token vector
-    for(int i = 0; i < E_m.size(); i++)
-        cout << E_m[i] << '\n';
+    // Printing map. Month begins at 1.
+    for(int i = 1; i < kWhPerMonth.size() + 1; i++)
+        cout << kWhPerMonth[i] << '\n';
 }
