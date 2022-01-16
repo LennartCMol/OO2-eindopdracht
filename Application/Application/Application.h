@@ -1,6 +1,7 @@
 #pragma once
 #include <iostream>
 #include "Webclient.h"
+#include "Parser.h"
 
 class Application
 {
@@ -19,6 +20,7 @@ private:
 	int angle = 0;
 	int aspect = 0;
 	int energyUsage = 4000;
+	std::map<int, double> kWhPerMonth;
 };
 
 #include "Application.hpp"

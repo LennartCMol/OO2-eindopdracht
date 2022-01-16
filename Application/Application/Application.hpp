@@ -3,7 +3,12 @@
 template <typename T>
 T Application::checkInput(T variableType, int min, int max) {
     while (!(std::cin >> variableType) || !(variableType >= min && variableType <= max)) {
-        std::cout << "Wrong input. Try again. Use correct type and value between min and max." << std::endl;
+        if (std::cin.fail()) {
+            std::cout << "Wrong input. Please input correct type." << std::endl;
+        }
+        else {
+            std::cout << "Wrong input. Please use a value between " << to_string(min) << " and " << to_string(max) << "." << std::endl;
+        }
         std::cin.clear();
         while (std::cin.get() != '\n') {}
     }

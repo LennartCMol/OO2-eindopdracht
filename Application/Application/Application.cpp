@@ -23,5 +23,15 @@ void Application::run() {
     energyUsage = checkInput<int>(energyUsage, 0, 20000);
 
     Webclient client;
-    std::cout << client.requestData(latitude, langitude, peakPower, loss, angle, aspect);
+
+    std::string rawData = client.requestData(latitude, langitude, peakPower, loss, angle, aspect);
+    std::cout << rawData;
+    
+    Parser parser;
+
+    kWhPerMonth = parser.Parse(rawData);
+    for (int i = 1; i < kWhPerMonth.size() + 1; i++)
+        std::cout << kWhPerMonth[i] << '\n';
+    std::cin.get();
+
 }
