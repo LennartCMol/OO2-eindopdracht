@@ -9,17 +9,17 @@ Application::~Application()
 }
 
 void Application::run() {
-    std::cout << "Enter Latitude (degrees) (min 90. max 90.):" << std::endl;
+    std::cout << "Enter latitude in degrees. (min 90. max 90.):" << std::endl;
     latitude = Application::checkInput<double>(latitude, -90, 90);
-    std::cout << "Enter langitude (degrees) (min -180. max 180.):" << std::endl;
+    std::cout << "Enter langitude in degrees. (min -180. max 180.):" << std::endl;
     langitude = checkInput<double>(langitude, -180, 180);
-    std::cout << "Enter Nominal power of the PV system (c-Si) (kWp) (min 0. max 500.): " << std::endl;
+    std::cout << "Enter nominal power of the PV system in kWp. (min 0. max 500.): " << std::endl;
     peakPower = checkInput<int>(peakPower, 0, 500);
-    std::cout << "Enter Fixed slope of modules (degrees) (min 0. max 90):" << std::endl;
+    std::cout << "Enter fixed slope of PV system in degrees. (min 0. max 90):" << std::endl;
     angle = checkInput<int>(angle, 0, 90);
-    std::cout << "Enter Orientation (azimuth) of modules (degrees) (min -180. max 180.):" << std::endl;
+    std::cout << "Enter orientation (azimuth) of PV system in degrees. 0 = south, 90 = west, -90 = east. (min -180. max 180.):" << std::endl;
     aspect = checkInput<int>(aspect, -180, 180);
-    std::cout << "Enter energy usage (kWh/year) (min 0. max 20000.)" << std::endl;
+    std::cout << "Enter energy usage in kWh per year (min 0. max 20000.)" << std::endl;
     energyUsage = checkInput<int>(energyUsage, 0, 20000);
 
     Webclient client;
