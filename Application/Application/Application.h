@@ -2,6 +2,7 @@
 #include <iostream>
 #include "Webclient.h"
 #include "Parser.h"
+#include "Calculator.h"
 
 class Application
 {
@@ -13,12 +14,12 @@ public:
 private:
 	template <typename T>
 	T checkInput(T variableType, int min, int max);
-	double latitude = 45.000;
-	double langitude = 8.000;
-	int peakPower = 1;
-	const int loss = 14;
-	int angle = 0;
-	int aspect = 0;
+	double latitude = 51.688307;
+	double langitude = 5.286983;
+	double peakPower = 0.350;
+	const double loss = 1.2;
+	int angle = 40;
+	int aspect = -45;
 	int energyUsage = 4000;
 	std::map<int, double> kWhPerMonth;
 };

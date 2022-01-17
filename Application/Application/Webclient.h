@@ -14,7 +14,7 @@ class Webclient
 public:
 	Webclient();
 	~Webclient();
-	std::string requestData(double, double, int, const int, int, int);
+	std::string requestData(double, double, double, const double, int, int);
 
 private:
 };

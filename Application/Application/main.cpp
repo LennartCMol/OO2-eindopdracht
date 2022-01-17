@@ -2,8 +2,10 @@
 
 int main()
 {
-    Application application;
-    application.run();
+    Application *application = new Application;
+    application->run();
+
+    delete application;
 
     return 0;
 }

@@ -9,7 +9,7 @@ Webclient::~Webclient()
 {
 }
 
-std::string Webclient::requestData(double latitude, double langitude, int peakPower, const int loss, int angle, int aspect) {
+std::string Webclient::requestData(double latitude, double langitude, double peakPower, const double loss, int angle, int aspect) {
     string parameterString =
         "https://re.jrc.ec.europa.eu/api/PVcalc?"
         "lat=" + to_string(latitude) + "&"
