@@ -36,7 +36,7 @@ void Application::run() {
 
     Parser parser;
 
-    kWhPerMonth = parser.Parse(rawData);
+    kWhPerMonth = parser.parse(rawData);
 
     Calculator calculator;
     calculator.calculateTotalPanels(kWhPerMonth, energyUsage);

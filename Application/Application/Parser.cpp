@@ -8,7 +8,7 @@ Parser::~Parser()
 {
 }
 
-std::map<int, double> Parser::Parse(std::string rawData) {
+std::map<int, double> Parser::parse(std::string rawData) {
     // Vector of string to save tokens
     std::vector <std::string> tokens;
 

@@ -10,7 +10,7 @@ class Parser
 public:
 	Parser();
 	~Parser();
-	std::map<int, double> Parse(std::string);
+	std::map<int, double> parse(std::string);
 
 private:
 

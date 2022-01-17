@@ -12,11 +12,11 @@ public:
 	Calculator();
 	~Calculator();
 	void calculateTotalPanels(std::map<int, double>, int);
-	void calculatePanelPerMonth(double);
 
 private:
-	int energyUsagePerMonth;
+	int energyUsagePerMonth = 0;
 	std::atomic<double> totalPanels;
+	void calculatePanelPerMonth(double);
 };
 
 
